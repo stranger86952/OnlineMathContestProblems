@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         OnlineMathContestProblems 0.3
 // @namespace    https://twitter.com/kstation_kagigi
-// @version      0.3
+// @version      0.3.1
 // @description  you can see your correct/wrong easily
 // @author       stranger_86952
 // @match        https://onlinemathcontest.com/problems
@@ -9,14 +9,8 @@
 // @require      https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js
 // @require      http://code.jquery.com/jquery-latest.js
 // @require      https://code.jquery.com/jquery-3.5.1.min.js
+// @license      MIT
 // ==/UserScript==
-/*function rgbtohex(orig){
- var rgb = orig.replace(/\s/g,'').match(/^rgba?\((\d+),(\d+),(\d+)/i);
- return (rgb && rgb.length === 4) ? "#" +
-  ("0" + parseInt(rgb[1],10).toString(16)).slice(-2) +
-  ("0" + parseInt(rgb[2],10).toString(16)).slice(-2) +
-  ("0" + parseInt(rgb[3],10).toString(16)).slice(-2) : orig;
-}*/
 function don(na){
     console.log('start');
     function func(con,cell,num){
