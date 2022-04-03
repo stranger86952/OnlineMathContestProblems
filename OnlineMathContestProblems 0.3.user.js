@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         OnlineMathContestProblems 0.3
 // @namespace    https://twitter.com/kstation_kagigi
-// @version      0.3.1
+// @version      0.3.1.1
 // @description  you can see your correct/wrong easily
 // @author       stranger_86952
 // @match        https://onlinemathcontest.com/problems
@@ -26,9 +26,11 @@ function don(na){
         .done(function(data) {
             $(data).find('challenge-container').find('table').find('tbody').each(function(){
                 var ttds = $(this).find('tr');
-                var bc = $(ttds[num]).attr('class');
-                if(bc == 'table-success') $(cell[num]).css('background-color','#cde9ce');
-                else $(cell[num]).css('background-color','#FFFFFF')
+                for(var ij = 0;ij < num;ij++){
+                    var bc = $(ttds[ij]).attr('class');
+                    if(bc == 'table-success') $(cell[ij]).css('background-color','#cde9ce');
+                    else $(cell[ij]).css('background-color','#FFFFFF')
+                }
             });
             //console.log('ok');
         })
@@ -40,24 +42,9 @@ function don(na){
     $('tbody').find('tr').each(function(i, contestInfo) {
         const ath = $(contestInfo).find('th');
         const tds = $(contestInfo).find('td');
-        func(ath,tds,0);
-        func(ath,tds,1);
-        func(ath,tds,2);
-        func(ath,tds,3);
-        func(ath,tds,4);
-        func(ath,tds,5);
-        if(na == '7') func(ath,tds,6);
-        if(na == '15'){
-            func(ath,tds,6);
-            func(ath,tds,7);
-            func(ath,tds,8);
-            func(ath,tds,9);
-            func(ath,tds,10);
-            func(ath,tds,11);
-            func(ath,tds,12);
-            func(ath,tds,13);
-            func(ath,tds,14);
-        }
+        if(na == '6') func(ath,tds,6);
+        if(na == '7') func(ath,tds,7);
+        if(na == '15') func(ath,tds,15);
     });
 }
 window.onload = function(){
